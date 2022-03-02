@@ -1,2 +1,2 @@
 def write(x):
-    return ""
+    return "She sells sea shells"
