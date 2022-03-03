@@ -10,11 +10,17 @@ class Pencil:
                 if char == " ":
                     self.sentence = self.sentence + char
                 elif char.isupper():
-                    if self.durability > 2:
-                        self.durability -= 2
-                        self.sentence = self.sentence + char
+                    self.degradation_uppercase_letters(char)
                 else:
-                    if self.durability > 0:
-                        self.durability -= 1
-                        self.sentence = self.sentence + char
+                    self.degradation_lowercase_letters(char)
         return self.sentence
+
+    def degradation_lowercase_letters(self, char):
+        if self.durability > 0:
+            self.durability -= 1
+            self.sentence = self.sentence + char
+
+    def degradation_uppercase_letters(self, char):
+        if self.durability > 2:
+            self.durability -= 2
+            self.sentence = self.sentence + char
