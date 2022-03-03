@@ -8,10 +8,13 @@ class Pencil:
         for char in append:
             if self.durability > 0:
                 if char == " ":
-                    pass
+                    self.sentence = self.sentence + char
                 elif char.isupper():
-                    self.durability -= 2
+                    if self.durability > 2:
+                        self.durability -= 2
+                        self.sentence = self.sentence + char
                 else:
-                    self.durability -= 1
-                self.sentence = self.sentence + char
+                    if self.durability > 0:
+                        self.durability -= 1
+                        self.sentence = self.sentence + char
         return self.sentence
