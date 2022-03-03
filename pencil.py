@@ -13,6 +13,8 @@ class Pencil:
                     self.degradation_and_append_uppercase_letters(char)
                 else:
                     self.degradation_and_append_lowercase_letters(char)
+            else:
+                self.append_character_on_sentence(" ")
         return self.sentence
 
     def append_character_on_sentence(self, char):

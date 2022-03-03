@@ -15,19 +15,23 @@ class TestPencil(unittest.TestCase):
 
     def test_when_ISupplyPencilWithADurabilityOf2_Then_sh_isReturned(self):
         pencil = Pencil(2)
-        self.assertEqual("sh", pencil.write("she sells"))
+        self.assertEqual("sh       ", pencil.write("she sells"))
 
     def test_when_ISupplyPencilWithADurabilityOf4_Then_She_isReturned(self):
         pencil = Pencil(4)
-        self.assertEqual("She", pencil.write("Shesells"))
+        self.assertEqual("She     ", pencil.write("Shesells"))
 
     def test_when_ISupplyPencilWithADurabilityOf4AndSpaces_Then_spacesDontDegradation(self):
         pencil = Pencil(4)
-        self.assertEqual("she s", pencil.write("she sells"))
+        self.assertEqual("she s    ", pencil.write("she sells"))
 
     def test_when_ISupplyPencilWithADurabilityOf1AndACapital_Then_nothingIsReturned(self):
         pencil = Pencil(1)
         self.assertEqual("", pencil.write("S"))
+
+    def test_when_ISupplyPencilWithADurabilityOf4_Then_spacesAreReturnedWhenDurabilityRunsOut(self):
+        pencil = Pencil(4)
+        self.assertEqual("She ", pencil.write("Shes"))
 
 
 if __name__ == '__main__':
