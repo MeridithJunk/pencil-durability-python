@@ -5,5 +5,8 @@ class Pencil:
         self.durability = durability
 
     def write(self, append):
-        self.sentence = self.sentence + append
+        for char in append:
+            if self.durability > 0:
+                self.durability -= 1
+                self.sentence = self.sentence + char
         return self.sentence
