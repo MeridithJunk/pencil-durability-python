@@ -13,6 +13,10 @@ class TestPencil(unittest.TestCase):
         pencil.write("She sells sea shells")
         self.assertEqual("She sells sea shells by the seashore", pencil.write(" by the seashore"))
 
+    def test_when_ISupplyPencilWithADurabilityOf2_Then_sh_isReturned(self):
+        pencil = Pencil(2)
+        self.assertEqual("sh", pencil.write("she sells"))
+
 
 if __name__ == '__main__':
     unittest.main()
