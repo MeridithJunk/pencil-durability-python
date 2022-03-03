@@ -21,6 +21,10 @@ class TestPencil(unittest.TestCase):
         pencil = Pencil(4)
         self.assertEqual("She", pencil.write("Shesells"))
 
+    def test_when_ISupplyPencilWithADurabilityOf4AndSpaces_Then_spacesDontDegradation(self):
+        pencil = Pencil(4)
+        self.assertEqual("she s", pencil.write("she sells"))
+
 
 if __name__ == '__main__':
     unittest.main()

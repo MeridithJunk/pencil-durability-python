@@ -7,7 +7,9 @@ class Pencil:
     def write(self, append):
         for char in append:
             if self.durability > 0:
-                if char.isupper():
+                if char == " ":
+                    self.sentence = self.sentence + char
+                elif char.isupper():
                     self.durability -= 2
                     self.sentence = self.sentence + char
                 else:
