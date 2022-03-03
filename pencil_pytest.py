@@ -17,6 +17,10 @@ class TestPencil(unittest.TestCase):
         pencil = Pencil(2)
         self.assertEqual("sh", pencil.write("she sells"))
 
+    def test_when_ISupplyPencilWithADurabilityOf4_Then_She_isReturned(self):
+        pencil = Pencil(4)
+        self.assertEqual("She", pencil.write("Shesells"))
+
 
 if __name__ == '__main__':
     unittest.main()
